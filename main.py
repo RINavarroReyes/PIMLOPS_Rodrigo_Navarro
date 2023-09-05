@@ -86,11 +86,10 @@ def sentiment_analysis(anio:int):
         'Neutral': conteo_1,
         'Positive': conteo_2
     }
-    
     return resultados
 
 #print(userdata('76561197970982479'))
 #print(countreviews('2011-01-01','2012-01-01'))
-print(genre('Adventure'))
+#print(genre('Adventure'))
 #print(developer('Secret Level SRL'))
 #print(sentiment_analysis(2013))
