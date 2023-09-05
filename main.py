@@ -40,7 +40,7 @@ def countreviews(fecha_inicio:str, fecha_fin:str):
 @app.get("/getGenero")
 def genre(genero:str):
     # Fusionar los DataFrames en base a la columna 'item_id'
-    merged_df = pd.merge(df_items, df_games, on='item_id', how='left')
+    merged_df = pd.merge(df_items, df_games, left_on='item_id',right_on='id', how='left')
     # Inicializar un diccionario para almacenar la suma de playtime_forever por género
     generos_suma = {}
     # Obtener la lista de columnas de género (variables dummies)
@@ -91,6 +91,6 @@ def sentiment_analysis(anio:int):
 
 #print(userdata('76561197970982479'))
 #print(countreviews('2011-01-01','2012-01-01'))
-#print(genre('Adventure'))
+print(genre('Adventure'))
 #print(developer('Secret Level SRL'))
-print(sentiment_analysis(2013))
+#print(sentiment_analysis(2013))
