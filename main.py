@@ -14,7 +14,7 @@ def userdata(user_id:str):#Debe devolver cantidad de dinero gastado por el usuar
     # Filtrar los items comprados por el usuario
     items_usuario = df_items[df_items['user_id'] == user_id]
     # Obtener los juegos comprados por el usuario
-    juegos_comprados = df_games[df_games['item_id'].isin(items_usuario['item_id'])]
+    juegos_comprados = df_games[df_games['id'].isin(items_usuario['item_id'])]
     #juegos_comprados = df_games.merge(items_usuario, left_on='id', right_on='item_id', how='inner')
     # Calcular la cantidad de dinero gastada
     dinero_gastado = juegos_comprados['price'].astype(float).sum()
